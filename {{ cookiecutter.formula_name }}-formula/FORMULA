@@ -6,4 +6,3 @@ release: 1
 summary: {{ cookiecutter.formula_short_description }}
 description: {{ cookiecutter.formula_short_description }}
 top_level_dir: {{ cookiecutter.formula_name }}
-recommended: 
