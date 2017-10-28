@@ -3,6 +3,7 @@
     "formula_short_description": "SaltStack Formula Boilerplate contains all the boilerplate you need to create a SaltStack Formula.",
     "full_name": "Dave Neeley",
     "github_username": "daveneeley",
+    "email_address": "david.neeley@motorolasolutions.com",
     "owner": ["Spillman Technologies, a Motorola Solutions Company", "SaltStack Formulas"],
     "release_date": "{% now 'utc', '%Y-%m-%d' %}",
     "year": "{% now 'utc', '%Y' %}",
