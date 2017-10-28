@@ -9,4 +9,5 @@ fi
 sudo mkdir -p /srv/salt
 sudo mkdir -p /srv/pillar
 sudo mkdir -p /srv/formulas
+sudo mkdir -p /var/cache/salt/master
 sudo cp $SRCDIR/salt-top.example /srv/salt/top.sls

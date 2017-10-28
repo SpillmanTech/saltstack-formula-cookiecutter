@@ -36,14 +36,18 @@ sudo spm update_repo
 latest=$(ls -t /srv/spm_build/{{ cookiecutter.formula_name }}*.spm | head -n1)
 sudo spm local install -y -f $latest
 
+
+if ls /srv/spm/pillar/*.orig > /dev/null 2>&1; then
 #set up pillar top file
 echo "\
 base:
   '*':" | sudo tee /srv/pillar/top.sls
-for pillar in $(ls /srv/spm/pillar/*.orig); do
-newbase=$(basename $pillar)
-newbase=${newbase/.orig/}
-cp -f $pillar /srv/pillar/$newbase
-newbase=${newbase/.sls/}
-echo "    - $newbase" | sudo tee -a /srv/pillar/top.sls
-done
+
+    for pillar in $(ls /srv/spm/pillar/*.orig); do
+    newbase=$(basename $pillar)
+    newbase=${newbase/.orig/}
+    cp -f $pillar /srv/pillar/$newbase
+    newbase=${newbase/.sls/}
+    echo "    - $newbase" | sudo tee -a /srv/pillar/top.sls
+    done
+fi
